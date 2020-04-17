@@ -1,9 +1,25 @@
 <h1>HISオリジナルTシャツ販売特設サイト</h1>
 
 <div class="row">
-  <div class="col-md-8 col-md-2">
-    <div class="public-photo">
-      <%= image_tag "/his_folder/S__16744461.jpg" %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="public-photo center">
+      <%= image_tag "/his_folder/S__16744461.jpg", class: "photo" %>
+       <h2>デザイン、カラーは選べません。</h2>
     </div>
+  </div>
+  <div class="col-md-6 col-md-offset-3 center">
+    <table class="table table-responsive table-show center">
+      <tbody>
+        <tr>
+          <th>価格</th>
+          <td>3000円</td>
+        </tr>
+        <tr>
+          <th>サイズ</th>
+          <td>100、110、120、130 、140、150、WM、WL XS、S、M L、XL、2XL、3XL</td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to "申し込み詳細ページへ", "#", class: "btn btn-primary btn-lg btn-show" %>
   </div>
 </div>
