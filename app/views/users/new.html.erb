@@ -1,0 +1,27 @@
+<% provide(:title, "申し込みフォーム") %>
+
+<h1>申し込みフォーム</h1>
+
+<div class="-row">
+  <div class="col-md-6 col-md-offset-3 center">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'shared/error_messages' %>
+      
+      <%= f.label :name, class: "label-form" %>
+      <%= f.text_field :name, class: "form-control" %>
+      
+      <%= f.label :email, class: "label-form" %>
+      <%= f.email_field :email, class: "form-control" %>
+      
+      <%= f.label :size, class: "label-form" %><br>
+      <%= f.select :size, [['100', 1], ['110', 2], ['120', 3], ['140', 4],['150', 5], ['WM', 6],['WL', 7], ['WL', 8],
+                              ['XS', 9], ['S', 10],['M', 11], ['L', 12],['XL', 13], ['2XL', 14],['3XL', 15]], { include_blank: true},
+                              { class: "select-form" }%>
+      <br>
+      <%= f.label :memo, class: "label-form" %>
+      <%= f.text_field :memo, class: "form-control" %>
+      
+      <%= f.submit "申し込み完了", class: "btn btn-danger btn-form btn-lg" %>
+    <% end %>
+  </div>
+</div>
