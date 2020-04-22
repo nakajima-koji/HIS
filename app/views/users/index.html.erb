@@ -2,14 +2,32 @@
 
 <h1>購入者一覧</h1>
 
+<div class="center">
+  <% if User.count > 20 %>
+    <%= will_paginate %>
+  <% end %>
+</div>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <table class="table">
-      <% @users.each do |user| %>
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+        <tr>
+          <th class="center">名前</th>
+          <th class="center">メールアドレス</th>
+          <th class="center">サイズ</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.size %></td>
         </tr>
       <% end %>
+      </tbody>
     </table>
   </div>
 </div>
