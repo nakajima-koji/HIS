@@ -7,6 +7,8 @@
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
       
+      <%= f.hidden_field :password_digest, value: "password" %>
+      
       <%= f.label :name, class: "label-form" %>
       <%= f.text_field :name, class: "form-control" %>
       

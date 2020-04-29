@@ -1,5 +1,7 @@
 User.create!(name: "こうた",
              email: "sample@email.com",
+             password: "password",
+             password_confirmation: "password",
              size: 'M')
 
 60.times do |n|
