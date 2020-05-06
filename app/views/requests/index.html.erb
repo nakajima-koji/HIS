@@ -3,7 +3,7 @@
 <h1>購入者一覧</h1>
 
 <div class="center">
-  <% if User.count > 20 %>
+  <% if @requests.count > 20 %>
     <%= will_paginate %>
   <% end %>
 </div>
@@ -15,16 +15,18 @@
         <tr>
           <th class="center">名前</th>
           <th class="center">メールアドレス</th>
+          <th class="center">住所</th>
           <th class="center">サイズ</th>
         </tr>
       </thead>
       
       <tbody>
-        <% @users.each do |user| %>
+        <% @requests.each do |request| %>
         <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.size %></td>
+          <td><%= request.name %></td>
+          <td><%= request.email %></td>
+          <td><%= request.address %></td>
+          <td><%= request.size %></td>
         </tr>
       <% end %>
       </tbody>
