@@ -2,6 +2,15 @@
 
 <h1>申し込みフォーム</h1>
 
+<div class="center">
+  <h2>クレジットカード決済はこちら</h2>
+ <%= form_tag action: :pay, method: :post do %>
+  :plain
+    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="公開鍵"></script>
+</div>
+
+
+
 <div class="-row">
   <div class="col-md-4 col-md-offset-4">
     <%= form_with(model: @user, local: true) do |f| %>

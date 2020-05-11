@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '~> 5.1.6'
 gem 'bcrypt'
+gem 'payjp'
 gem 'rails-i18n'
 gem 'faker'
 gem 'will_paginate' 
