@@ -61,6 +61,10 @@ GEM
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.11.0)
@@ -198,6 +202,7 @@ DEPENDENCIES
   bootstrap-will_paginate
   byebug
   coffee-rails (~> 4.2)
+  dotenv-rails
   faker
   jbuilder (~> 2.5)
   jquery-rails
