@@ -2,6 +2,16 @@
 
 <h1>申し込みフォーム</h1>
 
+<div class="row center">
+  <div class="col-md-4 col-md-offset-4">
+    <h2>クレジットカード決済はこちら</h2>
+      <%= form_with(model: @request, url: requests_pay_path, method: :post, local: true) do %>
+      <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="公開キー"></script>
+      <% end %>
+  </div>
+</div>
+
+
 <div class="-row">
   <div class="col-md-4 col-md-offset-4">
     <%= form_with(model: @request, url: user_requests_path, local: true) do |f| %>

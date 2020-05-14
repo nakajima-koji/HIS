@@ -23,6 +23,17 @@ class RequestsController < ApplicationController
     end
   end
   
+  def pay
+    @user = User.find(1)
+    @request = @user.request.build
+    Payjp.api_key = '秘密キー'
+    charge = Payjp::Charge.create(
+    :amount => 3500,
+    :card => params['payjp-token'],
+    :currency => 'jpy',
+    )
+  end
+  
   private
     def request_params
       params.require(:request).permit(:name, :email, :memo, :size, :address)

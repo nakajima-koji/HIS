@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create] do
     member do
-      get 'requests/pay'
+      
     end
     resources :requests, only: [:index, :new, :create]
   end
   get 'users/user_check', to: 'users#user_check'
+  post 'requests/pay', to: 'requests#pay'
 end
