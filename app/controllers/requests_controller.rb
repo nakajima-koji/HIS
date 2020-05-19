@@ -16,7 +16,6 @@ class RequestsController < ApplicationController
     @user = User.find(1)
     @request = @user.request.new(request_params)
     if @request.save
-     RelationshipMailer.request_creating(@user,@request).deliver
       redirect_to users_user_check_url
     else
       render :new

@@ -99,6 +99,18 @@ img.photo {
 
 // フォーム
 
+.contents {
+  clear: both;
+  margin: 0 10px 1.0em 10px;
+  padding: 0.5em 10px 0.5em 10px;
+  border: 1px solid #7070ba;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: left;
+  color: #fff;
+  background: #33ccff;
+}
+
 .label-form {
   margin-top: 10px;
 }
