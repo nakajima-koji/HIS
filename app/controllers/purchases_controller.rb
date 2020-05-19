@@ -1,21 +1,21 @@
-class RequestsController < ApplicationController
+class PurchasesController < ApplicationController
   before_action :logged_in_user?, only: [:index]
   before_action :admin_user, only: [:index]
   
   def index
     @user = User.find(params[:user_id])
-    @requests = @user.request.paginate(page: params[:page], per_page: 20)
+    @purchases = @user.purchase.paginate(page: params[:page], per_page: 20)
   end
   
   def new
     @user = User.find(1)
-    @request = @user.request.build
+    @purchase = @user.purchase.build
   end
   
   def create
     @user = User.find(1)
-    @request = @user.request.new(request_params)
-    if @request.save
+    @purchase = @user.purchase.new(request_params)
+    if @purchase.save
       redirect_to users_user_check_url
     else
       render :new
@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
   
   def pay
     @user = User.find(1)
-    @request = @user.request.build
+    @purchase = @user.purchase.build
     Payjp.api_key = '秘密キー'
     charge = Payjp::Charge.create(
     :amount => 3500,
@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
   end
   
   private
-    def request_params
-      params.require(:request).permit(:name, :email, :memo, :size, :address)
+    def purchase_params
+      params.require(:purchase).permit(:name, :email, :memo, :size, :address)
     end
 end

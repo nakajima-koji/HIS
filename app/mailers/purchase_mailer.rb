@@ -1,7 +1,7 @@
-class RequestMailer < ApplicationMailer
+class PurchaseMailer < ApplicationMailer
   
-  def send_buyer(requested)
-    @request = requested
+  def send_buyer(purchase)
+    @purchase = purchase
     mail(
       from: 'crazy.max.meteora@gmail.com',
       to: requested.email,

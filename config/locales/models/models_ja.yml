@@ -13,9 +13,10 @@ ja:
           memo: 応援コメント
           created_at: 作成日
           updated_at: 更新日
-        request:
+        purchase:
           name: 名前
           email: メールアドレス
           size: サイズ
           memo: 応援コメント
           address: 住所
+          number: 郵便番号
