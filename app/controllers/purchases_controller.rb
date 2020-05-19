@@ -14,7 +14,7 @@ class PurchasesController < ApplicationController
   
   def create
     @user = User.find(1)
-    @purchase = @user.purchase.new(request_params)
+    @purchase = @user.purchase.new(purchase_params)
     if @purchase.save
       redirect_to users_user_check_url
     else
@@ -35,6 +35,6 @@ class PurchasesController < ApplicationController
   
   private
     def purchase_params
-      params.require(:purchase).permit(:name, :email, :memo, :size, :address)
+      params.require(:purchase).permit(:name, :email, :memo, :size, :address, :number)
     end
 end

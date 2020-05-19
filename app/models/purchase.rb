@@ -8,4 +8,6 @@ class Purchase < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
                     
   validates :size, presence: true
+  validates :address, presence: true
+  validates :number, presence: true
 end

@@ -42,7 +42,7 @@ module SessionsHelper
   
   def logged_in_user?
     unless logged_in?
-      flash[:success] = "権限がありません"
+      flash[:success] = "再度お試しください"
       redirect_to root_url
     end
   end

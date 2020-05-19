@@ -15,9 +15,10 @@ User.create!(name: "こうじ",
 60.times do |n|
   name  = Faker::Name.name
   email = "sample-#{n+1}@email.com"
-  Request.create!(name: name,
+  Purchase.create!(name: name,
                   email: email,
                   size: "110",
+                  number: "0800810",
                   address: "obihirosi",
                   user_id: "1")
 end
