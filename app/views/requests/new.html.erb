@@ -3,7 +3,7 @@
 <h1>申し込みフォーム</h1>
 
 <div class="row center">
-  <div class="col-md-4 col-md-offset-4">
+  <div class="col-md-4 col-md-offset-4 new-pad">
     <h2>クレジットカード決済はこちら</h2>
       <%= form_with(model: @request, url: requests_pay_path, method: :post, local: true) do %>
       <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="公開キー"></script>
@@ -11,9 +11,24 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 new_pad">
+    <h4>
+      １、下記のフォームにお客様の情報をご入力、送信して下さい。
+      折り返し、「振り込み先口座」等を明記したメールを自動送信させていただきます。
+    </h4><br>
+    <h4>２、届いたメールの内容にしたがって、メールに記載されている銀行口座へのお振り込みをお願いいたします。
+      （※お振り込み後、メールにてご一報いただけますと幸いです）
+    </h4><br>
+    <h4>
+      ３、お振り込みの確認がとれた「翌日」に、CDを「クロネコヤマトのメール便速達」にて発送させていただきます。
+    </h4>
+  </div>
+</div>
 
-<div class="-row">
-  <div class="col-md-4 col-md-offset-4">
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 new_pad">
     <%= form_with(model: @request, url: user_requests_path, local: true) do |f| %>
       <%= render 'shared/error_messages', object: @request %>
         

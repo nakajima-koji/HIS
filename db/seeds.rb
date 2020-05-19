@@ -4,6 +4,13 @@ User.create!(name: "こうた",
              password_confirmation: "password",
              size: 'M',
              admin: true)
+             
+User.create!(name: "こうじ",
+             email: "crazy.max.meteora@gmail.com",
+             password: "password",
+             password_confirmation: "password",
+             size: 'M',
+             admin: true)
 
 60.times do |n|
   name  = Faker::Name.name
