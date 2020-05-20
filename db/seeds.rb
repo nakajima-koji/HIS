@@ -1,24 +1,13 @@
 User.create!(name: "こうた",
-             email: "sample@email.com",
-             password: "password",
-             password_confirmation: "password",
+             email: "obihiro.his@gmail.com",
+             password: "kouta0721",
+             password_confirmation: "kouta0721",
              size: 'M',
              admin: true)
              
 User.create!(name: "こうじ",
              email: "crazy.max.meteora@gmail.com",
-             password: "password",
-             password_confirmation: "password",
-             size: 'M',
+             password: "nakajimakoji1",
+             password_confirmation: "nakajimakoji1",
+             size: 'L',
              admin: true)
-
-60.times do |n|
-  name  = Faker::Name.name
-  email = "sample-#{n+1}@email.com"
-  Purchase.create!(name: name,
-                  email: email,
-                  size: "110",
-                  number: "0800810",
-                  address: "obihirosi",
-                  user_id: "1")
-end
