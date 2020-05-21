@@ -31,7 +31,7 @@
       <tbody>
         <% @purchases.each do |purchase| %>
         <tr>
-          <td><%= purchase.name %></td>
+          <td><%= link_to purchase.name, user_purchase_path(@user,purchase) %></td>
           <td><%= purchase.email %></td>
           <td><%= purchase.number %></td>
           <td><%= purchase.address %></td>

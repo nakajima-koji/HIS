@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     member do
       
     end
-    resources :purchases, only: [:index, :new, :create]
+    resources :purchases, only: [:index, :new, :create, :show]
   end
   get 'users/user_check', to: 'users#user_check'
   post 'purchases/pay', to: 'purchases#pay'

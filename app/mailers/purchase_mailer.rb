@@ -4,7 +4,7 @@ class PurchaseMailer < ApplicationMailer
     @purchase = purchase
     mail(
       from: 'crazy.max.meteora@gmail.com',
-      to: requested.email,
+      to: purchase.email,
       subject: '購入ありがとうございます。'
       )
   end

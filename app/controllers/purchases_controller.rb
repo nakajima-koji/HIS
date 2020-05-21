@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
   before_action :admin_user, only: [:index]
   
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(1)
     @purchases = @user.purchase.paginate(page: params[:page], per_page: 20)
   end
   
@@ -20,6 +20,11 @@ class PurchasesController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def show
+    @user = User.find(1)
+    @purchase = @user.purchase.find(params[:id])
   end
   
   def pay
