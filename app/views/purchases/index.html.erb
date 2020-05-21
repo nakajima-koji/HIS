@@ -30,8 +30,8 @@
       
       <tbody>
         <% @purchases.each do |purchase| %>
-        <tr>
-          <td><%= link_to purchase.name, user_purchase_path(@user,purchase) %></td>
+        <tr onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link">
+          <td><%= purchase.name %></td>
           <td><%= purchase.email %></td>
           <td><%= purchase.number %></td>
           <td><%= purchase.address %></td>
