@@ -1,0 +1,31 @@
+<% provide(:title, "編集") %>
+
+<h1>申込者編集</h1>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 new_pad">
+    <%= form_with(model: @purchase, url: user_purchase_url(@user, @purchase), method: :patch, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: @purchase %>
+        
+        <%= f.label :name, class: "label-form" %>
+        <%= f.text_field :name, class: "form-control" %>
+      
+        <%= f.label :email, class: "label-form" %>
+        <%= f.email_field :email, class: "form-control" %>
+        
+        <%= f.label :number, class: "label-form" %>
+        <%= f.telephone_field :number, class: "form-control" %>
+      
+        <%= f.label :address, class: "label-form" %>
+        <%= f.text_field :address, class: "form-control" %>
+      
+        <%= f.label :size, class: "label-form" %><br>
+        <%= f.text_field :size, class: "form-control" %>
+      <br>
+        <%= f.label :memo, class: "label-form" %>
+        <%= f.text_area :memo, class: "form-control", rows: 5 %>
+      
+      <%= f.submit "編集完了", class: "btn btn-success btn-form btn-lg" %>
+    <% end %>
+  </div>
+</div>

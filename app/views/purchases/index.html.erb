@@ -25,17 +25,19 @@
           <th class="center">郵便番号</th>
           <th class="center">住所</th>
           <th class="center">サイズ</th>
+          <th class="center">編集ボタン</th>
         </tr>
       </thead>
       
       <tbody>
         <% @purchases.each do |purchase| %>
-        <tr onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link">
-          <td><%= purchase.name %></td>
-          <td><%= purchase.email %></td>
-          <td><%= purchase.number %></td>
-          <td><%= purchase.address %></td>
-          <td><%= purchase.size %></td>
+        <tr>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.name %></td>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.email %></td>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.number %></td>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.address %></td>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.size %></td>
+          <td class="center"><%= link_to "編集", edit_user_purchase_path(@user, purchase), class: "btn btn-success btn-lg" %></td>
         </tr>
       <% end %>
       </tbody>
