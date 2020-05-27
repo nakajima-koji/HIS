@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create, :show, :edit, :update]
-  before_action :logged_in_user?, only: [:index, :show, :edit, :update]
-  before_action :admin_user, only: [:index,:show, :edit, :update]
+  before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :logged_in_user?, only: [:index, :show, :edit, :update, :destroy]
+  before_action :admin_user, only: [:index,:show, :edit, :update, :destroy]
   
   def index
     @purchases = @user.purchase.paginate(page: params[:page], per_page: 20)
@@ -36,6 +36,12 @@ class PurchasesController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @purchase = @user.purchase.find(params[:id])
+    @purchase.destroy
+    redirect_to user_purchases_url
   end
   
   def pay

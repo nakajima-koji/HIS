@@ -26,6 +26,7 @@
           <th class="center">住所</th>
           <th class="center">サイズ</th>
           <th class="center">編集ボタン</th>
+          <th class="center">削除ボタン</th>
         </tr>
       </thead>
       
@@ -38,6 +39,11 @@
           <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.address %></td>
           <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.size %></td>
           <td class="center"><%= link_to "編集", edit_user_purchase_path(@user, purchase), class: "btn btn-success btn-lg" %></td>
+          <td class="center">
+            <%= link_to "削除", user_purchase_path(@user, purchase), method: :delete,
+                         data: { confirm: "削除してもよろしいですか？復元はできません。" },
+                         class: "btn btn-danger btn-lg" %>
+          </td>
         </tr>
       <% end %>
       </tbody>
