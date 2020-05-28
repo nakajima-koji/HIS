@@ -20,6 +20,7 @@
     <table class="table table-bordered table-hover table-responsive">
       <thead>
         <tr>
+          <th class="center">ID</th>
           <th class="center">名前</th>
           <th class="center">メールアドレス</th>
           <th class="center">郵便番号</th>
@@ -33,6 +34,7 @@
       <tbody>
         <% @purchases.each do |purchase| %>
         <tr>
+          <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.id %></td>
           <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.name %></td>
           <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.email %></td>
           <td onclick='window.location="<%= '/users/' + @user.id.to_s + '/purchases/' + purchase.id.to_s %>"' role="link"><%= purchase.number %></td>
@@ -41,7 +43,7 @@
           <td class="center"><%= link_to "編集", edit_user_purchase_path(@user, purchase), class: "btn btn-success btn-lg" %></td>
           <td class="center">
             <%= link_to "削除", user_purchase_path(@user, purchase), method: :delete,
-                         data: { confirm: "削除してもよろしいですか？復元はできません。" },
+                         data: { confirm: "ID.#{ purchase.id }　　#{ purchase.name }さんを削除してもよろしいですか？復元はできません。" },
                          class: "btn btn-danger btn-lg" %>
           </td>
         </tr>
