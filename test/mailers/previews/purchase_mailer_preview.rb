@@ -5,4 +5,10 @@ class PurchaseMailerPreview < ActionMailer::Preview
     
     PurchaseMailer.send_buyer(requested)
   end
+  
+  def sending
+    purchase = Purchase.find(params[:id])
+    
+    PurchaseMailer.send_admin(purchase)
+  end
 end
