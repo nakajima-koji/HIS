@@ -25,12 +25,19 @@
         <td><%= @purchase.size %></td>
       </tr>
       <tr>
+        <th class="center">申し込み日時</th>
+        <td><%= @purchase.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      </tr>
+      <tr>
         <th class="center">応援コメント</th>
         <td><%= @purchase.memo %></td>
       </tr>
     </table>
     
     <%= link_to "編集", edit_user_purchase_path(@user, @purchase), class: "btn btn-success btn-lg" %>
+    <%= link_to "削除", user_purchase_path(@user, @purchase), method: :delete,
+                         data: { confirm: "ID.#{ @purchase.id }　　#{ @purchase.name }さんを削除してもよろしいですか？復元はできません。" },
+                         class: "btn btn-danger btn-lg" %>
     <%= link_to "一覧へ", user_purchases_path(@user), class: "btn btn-default btn-lg" %>
   </div>
 </div>
